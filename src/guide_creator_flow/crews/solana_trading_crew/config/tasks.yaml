@@ -1,78 +1,253 @@
-# Remove the balance checker task if it exists
-
-research_market_task:
+research_task:
   description: >
-    Research the current cryptocurrency market conditions, including:
-    1. Current trending tokens using the TrendingCryptoTokens tool
-    2. Token-specific sentiment and analysis for each trending token
-    3. Recent developments and news for each token
-    4. Community sentiment and social media analysis for trending tokens
+    Conduct comprehensive cryptocurrency market research using advanced analytical frameworks:
 
-    For each trending token identified:
-    - Gather price data and trading volume from multiple sources (CoinGecko, CoinMarketCap, etc.)
-    - Research recent developments and partnerships from various crypto news sources
-    - Collect community sentiment from social media and forums
-    - Identify key market indicators and signals
-    - Compare price and market data across different platforms
-    - Look for any discrepancies or notable differences in reported data
+    **PHASE 1: TRENDING TOKEN DEEP DIVE**
+    1. Use EnhancedTrendingCryptoTokens tool to get comprehensive data on trending tokens
+    2. For each trending token, analyze:
+       - Current price action and volume patterns
+       - Technical indicators (RSI, MACD, Bollinger bands implications)
+       - Support and resistance levels
+       - Market cap category and liquidity assessment
+       - Trading volume sustainability
+       - Social sentiment and community engagement metrics
 
-    Use the TrendingCryptoTokens tool to identify top trending tokens and gather
-    detailed information for relevant tokens.
-    Cross-reference information from multiple sources to ensure accuracy.
-    Provide detailed data and observations for analysis.
+    **PHASE 2: MACRO MARKET ANALYSIS**
+    3. Use MarketCorrelationTool to analyze:
+       - Correlation with major cryptocurrencies (BTC, ETH)
+       - Cross-asset correlations with traditional markets
+       - Sector rotation patterns within crypto
+       - Risk-on vs risk-off market sentiment
+
+    **PHASE 3: FUNDAMENTAL ANALYSIS**
+    4. For each significant token, research:
+       - Tokenomics and supply/demand dynamics
+       - Protocol revenue and fee generation
+       - Development activity and roadmap progress
+       - Partnership announcements and ecosystem growth
+       - Competitive positioning within their sector
+
+    **PHASE 4: NEWS AND CATALYST ANALYSIS**
+    5. Use NewsImpactTool and SerperDevTool to identify:
+       - Recent news events and their market impact
+       - Upcoming catalysts (earnings, product launches, regulatory events)
+       - Institutional activity and adoption signals
+       - Regulatory developments affecting specific tokens or sectors
+
+    **PHASE 5: ON-CHAIN ANALYSIS**
+    6. Where applicable, analyze:
+       - Whale wallet movements and large holder behavior
+       - Exchange inflows/outflows
+       - DeFi protocol metrics (TVL, active users, revenue)
+       - Staking ratios and validator behavior
+       - Network growth metrics
+
+    **DELIVERABLE REQUIREMENTS:**
+    - Provide quantitative data points for all major findings
+    - Include confidence levels for predictions and assessments
+    - Cross-reference data from multiple sources for validation
+    - Identify potential data inconsistencies or anomalies
+    - Flag high-impact events or unusual market activity
+
   expected_output: >
-    A comprehensive market research report with detailed data and observations,
-    including trending tokens and market metrics from multiple sources.
+    A comprehensive market research dossier containing:
+    1. Executive summary of key findings and market themes
+    2. Detailed analysis of each trending token with quantitative metrics
+    3. Market correlation analysis and cross-asset insights
+    4. Fundamental analysis summary with key value drivers
+    5. News impact assessment with catalyst calendar
+    6. On-chain metrics summary with behavioral insights
+    7. Data quality assessment and source reliability notes
+    8. Market anomaly alerts and unusual activity flags
 
-analyze_market_task:
+analysis_task:
   description: >
-    Analyze the market research data and provide insights on:
-    1. Market trends and patterns, including analysis of trending tokens
-    2. Potential opportunities and risks based on market movements
-    3. Key factors affecting market movement
-    4. Recommendations for market participants
+    Transform market research into actionable quantitative investment strategies:
 
-    Use the research data to support your analysis.
-    Consider the trending tokens and their market impact in your analysis.
+    **QUANTITATIVE MODELING PHASE:**
+    1. **Risk-Return Analysis:**
+       - Calculate Sharpe ratios for trending tokens (where historical data available)
+       - Estimate maximum drawdown and recovery periods
+       - Compute Value at Risk (VaR) at 95% and 99% confidence levels
+       - Analyze risk-adjusted returns vs major benchmarks
+
+    2. **Statistical Analysis:**
+       - Perform correlation analysis between tokens and major market factors
+       - Calculate beta coefficients relative to BTC and ETH
+       - Analyze volatility patterns and regime changes
+       - Identify mean reversion opportunities
+
+    3. **Technical Analysis Integration:**
+       - Multi-timeframe momentum analysis
+       - Volume-price relationship assessment
+       - Support/resistance level quantification
+       - Breakout probability calculations
+
+    4. **Portfolio Construction:**
+       - Optimal allocation recommendations using Modern Portfolio Theory
+       - Risk parity and maximum diversification approaches
+       - Scenario analysis for different market regimes
+       - Hedging strategies using correlated assets
+
+    5. **Market Timing Analysis:**
+       - Identify optimal entry/exit points based on technical and fundamental factors
+       - Calculate probability-weighted return expectations
+       - Assess market cycle positioning
+       - Generate tactical allocation adjustments
+
+    **STRATEGIC FRAMEWORK DEVELOPMENT:**
+    6. **Investment Themes:**
+       - Identify dominant market narratives and their sustainability
+       - Assess theme rotation patterns and lifecycle stages
+       - Quantify theme exposure and concentration risks
+       - Develop theme-based allocation strategies
+
+    7. **Risk Assessment:**
+       - Liquidity risk analysis for position sizing
+       - Concentration risk evaluation
+       - Tail risk assessment and black swan preparation
+       - Regulatory risk quantification
+
+    **DELIVERABLE REQUIREMENTS:**
+    - All recommendations must include quantitative backing
+    - Provide confidence intervals for return projections
+    - Include sensitivity analysis for key variables
+    - Specify risk management parameters and stop-loss levels
+    - Detail position sizing methodology
+
   expected_output: >
-    A detailed market analysis with actionable insights and recommendations,
-    supported by current market data and trending token information.
+    A quantitative investment strategy report containing:
+    1. Portfolio optimization recommendations with specific allocations
+    2. Risk-adjusted return projections with confidence intervals
+    3. Entry/exit strategies with quantitative triggers
+    4. Risk management framework with specific parameters
+    5. Market timing recommendations with probability assessments
+    6. Scenario analysis with stress testing results
+    7. Performance attribution framework for monitoring
+    8. Rebalancing rules and trigger mechanisms
 
-write_report_task:
+report_task:
   description: >
-    Create a comprehensive market analysis report in markdown format.
-    The report should include:
+    Create an institutional-grade cryptocurrency investment research report that synthesizes 
+    all analysis into actionable investment recommendations:
 
-    # Cryptocurrency Market Analysis Report
-    ## Date: {date}
+    **REPORT STRUCTURE AND REQUIREMENTS:**
 
-    ### Executive Summary
-    [Brief overview of key findings and recommendations]
+    # CRYPTOCURRENCY MARKET INTELLIGENCE REPORT
+    ## Investment Committee Briefing | [Current Date]
 
-    ### Market Overview
-    [Current market conditions and trends, including trending tokens]
+    ### EXECUTIVE SUMMARY (Max 1 page)
+    - Key investment themes and market outlook (3-6 month horizon)
+    - Top 3 investment recommendations with expected returns and risk levels
+    - Major risk factors and mitigation strategies
+    - Portfolio impact assessment for different allocation levels
 
-    ### Token Analysis
-    [Detailed analysis of key tokens and market metrics]
+    ### MARKET ENVIRONMENT ANALYSIS
+    - Current market regime classification (bull/bear/transitional)
+    - Macroeconomic factors affecting cryptocurrency markets
+    - Institutional adoption trends and regulatory landscape
+    - Cross-asset correlation dynamics and diversification benefits
 
-    ### Market Trends
-    [Analysis of current market trends and token movements]
+    ### INVESTMENT OPPORTUNITIES ANALYSIS
+    **For each recommended token/strategy:**
+    - Investment thesis with fundamental and technical rationale
+    - Expected return profile with upside/downside scenarios
+    - Risk assessment with specific risk factors and mitigation
+    - Position sizing recommendations and implementation timeline
+    - Success metrics and monitoring framework
 
-    ### Opportunities and Risks
-    [Key opportunities and potential risks based on market data]
+    ### PORTFOLIO CONSTRUCTION GUIDANCE
+    - Strategic asset allocation recommendations
+    - Tactical overlay opportunities
+    - Rebalancing triggers and frequency
+    - Liquidity considerations and trading costs
+    - Tax optimization strategies where applicable
 
-    ### Recommendations
-    [Actionable recommendations for market participants]
+    ### RISK MANAGEMENT FRAMEWORK
+    - Overall portfolio risk assessment
+    - Stress testing results and scenario analysis
+    - Hedging strategies and downside protection
+    - Risk monitoring metrics and alert systems
+    - Crisis management protocols
 
-    ### Technical Analysis
-    [Technical indicators and analysis]
+    ### IMPLEMENTATION ROADMAP
+    - Phased implementation approach with timeline
+    - Operational considerations and execution strategy
+    - Performance measurement and reporting framework
+    - Review schedule and decision points
 
-    ### Conclusion
-    [Summary and outlook]
+    ### APPENDICES
+    - Detailed quantitative analysis and modeling assumptions
+    - Data sources and methodology notes
+    - Regulatory considerations and compliance notes
+    - Glossary of terms and risk disclosures
 
-    Use the analysis data and current market information to create a well-structured,
-    professional report. Include relevant market data and trending token information
-    to support your analysis.
+    **QUALITY STANDARDS:**
+    - All claims must be supported by quantitative analysis
+    - Include confidence levels for all projections
+    - Provide clear rationale for all recommendations
+    - Address potential counterarguments and alternative scenarios
+    - Use professional language appropriate for institutional investors
+    - Include proper risk disclosures and disclaimers
+
   expected_output: >
-    A well-structured market analysis report in markdown format, incorporating
-    current market data and trending token information.
+    A comprehensive institutional research report (15-25 pages) formatted in markdown that includes:
+    1. Executive summary with clear investment recommendations
+    2. Detailed market analysis and investment thesis for each opportunity
+    3. Quantitative risk-return analysis with scenario modeling
+    4. Portfolio construction guidance with specific allocation recommendations
+    5. Implementation roadmap with timeline and success metrics
+    6. Comprehensive risk management framework
+    7. Professional formatting suitable for investment committee presentation
+    8. All supporting data, assumptions, and methodology documentation
+
+risk_task:
+  description: >
+    Conduct comprehensive risk assessment across all identified investment opportunities:
+
+    **RISK IDENTIFICATION AND QUANTIFICATION:**
+    1. **Market Risks:**
+       - Volatility analysis and extreme movement probabilities
+       - Correlation breakdown risks during stress periods
+       - Liquidity risk assessment for position sizing
+       - Market manipulation susceptibility
+
+    2. **Credit and Counterparty Risks:**
+       - Smart contract risk evaluation for DeFi protocols
+       - Exchange counterparty risk for centralized platforms
+       - Custody risk assessment
+       - Regulatory compliance risks
+
+    3. **Operational Risks:**
+       - Key person risk for smaller projects
+       - Technology risk and development roadmap execution
+       - Community and governance risks
+       - Security breach and hack probabilities
+
+    4. **Regulatory and Legal Risks:**
+       - Jurisdiction-specific regulatory changes
+       - Classification risk (security vs utility token)
+       - Tax implications and reporting requirements
+       - Cross-border regulatory arbitrage risks
+
+    **RISK MITIGATION STRATEGIES:**
+    5. **Portfolio Level:**
+       - Diversification strategies across tokens, sectors, and strategies
+       - Hedging approaches using derivatives or correlated assets
+       - Position sizing rules based on risk contribution
+       - Rebalancing triggers and risk budget allocation
+
+    6. **Asset Level:**
+       - Stop-loss strategies and technical triggers
+       - Fundamental deterioration warning signals
+       - Liquidity monitoring and exit strategies
+       - Due diligence refresh schedules
+
+  expected_output: >
+    A comprehensive risk assessment report detailing:
+    1. Risk register with probability and impact assessments
+    2. Quantified risk metrics for each major risk category
+    3. Risk mitigation strategies with implementation costs
+    4. Monitoring framework with key risk indicators
+    5. Crisis management protocols and contingency plans
+    6. Risk-adjusted return expectations incorporating all identified risks
