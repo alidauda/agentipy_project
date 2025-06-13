@@ -89,8 +89,8 @@ class SolanaTradingCrew:
     def crew(self) -> Crew:
         """Creates the Solana Market Analysis Crew"""
         return Crew(
-            agents=self.agents,  # Automatically created by the @agent decorator
-            tasks=self.tasks,  # Automatically created by the @task decorator
+            agents=[self.market_researcher(), self.market_analyst(), self.report_writer()   ],  # Automatically created by the @agent decorator
+            tasks=[self.research_market_task(), self.analyze_market_task(), self.write_report_task()],  # Automatically created by the @task decorator
             process=Process.sequential,
             verbose=True
         )
