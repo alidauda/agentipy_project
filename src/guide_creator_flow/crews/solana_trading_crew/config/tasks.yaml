@@ -1,0 +1,74 @@
+# Remove the balance checker task if it exists
+
+research_market_task:
+  description: >
+    Research the current Solana market conditions, including:
+    1. Current trending tokens
+    2. Price movements and volumes
+    3. Market sentiment indicators
+    4. Key market events and news
+
+    Target token: {target_token}
+
+    Provide detailed data and observations for analysis.
+  expected_output: >
+    A comprehensive market research report with detailed data and observations.
+  agent: market_researcher
+
+analyze_market_task:
+  description: >
+    Analyze the market research data and provide insights on:
+    1. Market trends and patterns
+    2. Potential opportunities and risks
+    3. Key factors affecting market movement
+    4. Recommendations for market participants
+
+    Target token: {target_token}
+
+    Use the research data to support your analysis.
+  expected_output: >
+    A detailed market analysis with actionable insights and recommendations.
+  agent: market_analyst
+  context:
+    - research_market_task
+
+write_report_task:
+  description: >
+    Create a comprehensive market analysis report in markdown format.
+    The report should include:
+
+    # Solana Market Analysis Report
+    ## Date: {date}
+
+    ### Executive Summary
+    [Brief overview of key findings and recommendations]
+
+    ### Market Overview
+    [Current market conditions and trends]
+
+    ### Token Analysis
+    [Detailed analysis of key tokens]
+
+    ### Market Trends
+    [Analysis of current market trends]
+
+    ### Opportunities and Risks
+    [Key opportunities and potential risks]
+
+    ### Recommendations
+    [Actionable recommendations for market participants]
+
+    ### Technical Analysis
+    [Technical indicators and analysis]
+
+    ### Conclusion
+    [Summary and outlook]
+
+    Target token: {target_token}
+
+    Use the analysis data to create a well-structured, professional report.
+  expected_output: >
+    A well-structured market analysis report in markdown format.
+  agent: report_writer
+  context:
+    - analyze_market_task
