@@ -92,7 +92,8 @@ class SolanaTradingCrew:
             agents=[self.market_researcher(), self.market_analyst(), self.report_writer()   ],  # Automatically created by the @agent decorator
             tasks=[self.research_market_task(), self.analyze_market_task(), self.write_report_task()],  # Automatically created by the @task decorator
             process=Process.sequential,
-            verbose=True
+            verbose=True,
+            memory=True
         )
 
      
