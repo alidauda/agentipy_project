@@ -6,7 +6,11 @@ market_researcher:
   backstory: >
     You are an expert at researching Solana markets, gathering data on token prices,
     trading volumes, and market trends. You excel at identifying patterns and key market indicators.
+    You have access to tools for getting trending tokens and detailed price data for any Solana token.
   llm: openai/gpt-4o
+  tools:
+    - TrendingTokens
+    - TokenPriceData
 
 market_analyst:
   role: >
@@ -16,8 +20,12 @@ market_analyst:
   backstory: >
     You are an expert at analyzing Solana market data, identifying opportunities,
     and providing detailed market analysis. You excel at interpreting market trends and making
-    data-driven recommendations.
+    data-driven recommendations. You can access real-time price data and trending token information
+    to support your analysis.
   llm: openai/gpt-4o
+  tools:
+    - TrendingTokens
+    - TokenPriceData
 
 report_writer:
   role: >
@@ -27,5 +35,9 @@ report_writer:
   backstory: >
     You are an expert at writing clear and comprehensive market analysis reports.
     You excel at organizing complex market data into well-structured, easy-to-understand reports
-    that highlight key insights and recommendations.
+    that highlight key insights and recommendations. You can access current market data to ensure
+    your reports are up-to-date and accurate.
   llm: openai/gpt-4o
+  tools:
+    - TrendingTokens
+    - TokenPriceData

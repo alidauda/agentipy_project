@@ -1,18 +1,19 @@
-from crewai import Agent, Crew, Process, Task,LLM
+from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
 from agentipy.agent import SolanaAgentKit
 from solders.pubkey import Pubkey
-from .tools import SolanaTools
+from .tools import TrendingTokens, TokenPriceData
 import asyncio
 from datetime import datetime
+import os 
+from dotenv import load_dotenv
+load_dotenv()
 
-
-
+# Initialize Solana agent kit
 agent = SolanaAgentKit(
-            private_key="",
-            rpc_url="https://api.mainnet-beta.solana.com"
-        )
-
+    private_key=os.getenv("SOLANA_PRIVATE_KEY"),
+    rpc_url="https://api.mainnet-beta.solana.com"
+)
 
 @CrewBase
 class SolanaTradingCrew:
@@ -22,14 +23,18 @@ class SolanaTradingCrew:
     agents_config = 'config/agents.yaml'
     tasks_config = 'config/tasks.yaml'
 
-   
+    def __init__(self):
+        # Initialize tools with the Solana agent
+        self.trending_tokens_tool = TrendingTokens(agent=agent)
+        self.token_price_data_tool = TokenPriceData(agent=agent)
+
     @agent
     def market_researcher(self) -> Agent:
         return Agent(
             config=self.agents_config['market_researcher'],
             tools=[
-                self.tools.get_token_price_data,
-                self.tools.get_trending_tokens
+                self.trending_tokens_tool,
+                self.token_price_data_tool
             ],
             llm=self.llm,
             verbose=True,
@@ -41,8 +46,8 @@ class SolanaTradingCrew:
         return Agent(
             config=self.agents_config['market_analyst'],
             tools=[
-                self.tools.get_token_price_data,
-                self.tools.get_trending_tokens
+                self.trending_tokens_tool,
+                self.token_price_data_tool
             ],
             llm=self.llm,
             verbose=True,
@@ -53,6 +58,10 @@ class SolanaTradingCrew:
     def report_writer(self) -> Agent:
         return Agent(
             config=self.agents_config['report_writer'],
+            tools=[
+                self.trending_tokens_tool,
+                self.token_price_data_tool
+            ],
             llm=self.llm,
             verbose=True,
             allow_code_execution=False
