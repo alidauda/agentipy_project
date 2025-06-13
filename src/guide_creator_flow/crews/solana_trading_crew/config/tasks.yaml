@@ -2,47 +2,48 @@
 
 research_market_task:
   description: >
-    Research the current Solana market conditions, including:
-    1. Current trending tokens using the TrendingTokens tool
-    2. Price movements and volumes for specific tokens using TokenPriceData
-    3. Market sentiment indicators
-    4. Key market events and news
+    Research the current cryptocurrency market conditions, including:
+    1. Current trending tokens using the TrendingCryptoTokens tool
+    2. Token-specific sentiment and analysis for each trending token
+    3. Recent developments and news for each token
+    4. Community sentiment and social media analysis for trending tokens
 
-    Target token: {target_token}
+    For each trending token identified:
+    - Gather price data and trading volume from multiple sources (CoinGecko, CoinMarketCap, etc.)
+    - Research recent developments and partnerships from various crypto news sources
+    - Collect community sentiment from social media and forums
+    - Identify key market indicators and signals
+    - Compare price and market data across different platforms
+    - Look for any discrepancies or notable differences in reported data
 
-    Use the TrendingTokens tool to identify top trending tokens and TokenPriceData
-    to gather detailed price information for the target token and other relevant tokens.
+    Use the TrendingCryptoTokens tool to identify top trending tokens and gather
+    detailed information for relevant tokens.
+    Cross-reference information from multiple sources to ensure accuracy.
     Provide detailed data and observations for analysis.
   expected_output: >
     A comprehensive market research report with detailed data and observations,
-    including trending tokens and specific price data.
-  agent: market_researcher
+    including trending tokens and market metrics from multiple sources.
 
 analyze_market_task:
   description: >
     Analyze the market research data and provide insights on:
     1. Market trends and patterns, including analysis of trending tokens
-    2. Potential opportunities and risks based on price movements
+    2. Potential opportunities and risks based on market movements
     3. Key factors affecting market movement
     4. Recommendations for market participants
 
-    Target token: {target_token}
-
-    Use the research data and additional token price data to support your analysis.
-    Consider both the target token and other trending tokens in your analysis.
+    Use the research data to support your analysis.
+    Consider the trending tokens and their market impact in your analysis.
   expected_output: >
     A detailed market analysis with actionable insights and recommendations,
-    supported by current price data and trending token information.
-  agent: market_analyst
-  context:
-    - research_market_task
+    supported by current market data and trending token information.
 
 write_report_task:
   description: >
     Create a comprehensive market analysis report in markdown format.
     The report should include:
 
-    # Solana Market Analysis Report
+    # Cryptocurrency Market Analysis Report
     ## Date: {date}
 
     ### Executive Summary
@@ -52,31 +53,26 @@ write_report_task:
     [Current market conditions and trends, including trending tokens]
 
     ### Token Analysis
-    [Detailed analysis of key tokens, including price data and market metrics]
+    [Detailed analysis of key tokens and market metrics]
 
     ### Market Trends
     [Analysis of current market trends and token movements]
 
     ### Opportunities and Risks
-    [Key opportunities and potential risks based on price data]
+    [Key opportunities and potential risks based on market data]
 
     ### Recommendations
     [Actionable recommendations for market participants]
 
     ### Technical Analysis
-    [Technical indicators and analysis using price data]
+    [Technical indicators and analysis]
 
     ### Conclusion
     [Summary and outlook]
 
-    Target token: {target_token}
-
     Use the analysis data and current market information to create a well-structured,
-    professional report. Include relevant price data and trending token information
+    professional report. Include relevant market data and trending token information
     to support your analysis.
   expected_output: >
     A well-structured market analysis report in markdown format, incorporating
-    current price data and trending token information.
-  agent: report_writer
-  context:
-    - analyze_market_task
+    current market data and trending token information.
